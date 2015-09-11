@@ -18,6 +18,8 @@ Pacman agents (in searchAgents.py).
 """
 
 from util import Stack
+from util import Queue
+from util import PriorityQueue
 import util
 
 class SearchProblem:
@@ -73,6 +75,7 @@ def tinyMazeSearch(problem):
     w = Directions.WEST
     return  [s, s, w, s, w, w, s, w]
 
+
 def depthFirstSearch(problem):
     """
     Search the deepest nodes in the search tree first.
@@ -91,13 +94,8 @@ def depthFirstSearch(problem):
     stateStack = Stack()
 
     state = problem.getStartState()
-
-    successors = problem.getSuccessors(state)
-    for successor in successors:
-        stateStack.push([successor])
-
-    """dummy state"""
-    state = [(state, "West", 0)]
+    state = [(state, "Stop", 0)]
+    stateStack.push(state)
 
     while not problem.isGoalState(state[len(state) - 1][0]):
         state = stateStack.pop()
@@ -111,12 +109,38 @@ def depthFirstSearch(problem):
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    stateQueue = Queue()
+
+    state = problem.getStartState()
+    state = [(state, "Stop", 0)]
+    stateQueue.push(state)
+
+    while not problem.isGoalState(state[len(state) - 1][0]):
+        state = stateQueue.pop()
+        successors = problem.getSuccessors(state[len(state) - 1][0])
+        for successor in successors:
+            if successor[0] not in [position[0] for position in state]:
+                stateQueue.push(state + [successor])
+    return [direction[1] for direction in state]
+
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    stateQueue = PriorityQueue()
+
+    state = problem.getStartState()
+    state = [(state, "Stop", 0)]
+    stateQueue.push(state)
+
+    while not problem.isGoalState(state[len(state) - 1][0]):
+        state = stateQueue.pop()
+        successors = problem.getSuccessors(state[len(state) - 1][0])
+        for successor in successors:
+            if successor[0] not in [position[0] for position in state]:
+                stateQueue.push(state + [successor],)
+    return [direction[1] for direction in state]
+
 
 def nullHeuristic(state, problem=None):
     """
@@ -124,6 +148,7 @@ def nullHeuristic(state, problem=None):
     goal in the provided SearchProblem.  This heuristic is trivial.
     """
     return 0
+
 
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
