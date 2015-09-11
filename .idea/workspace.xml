@@ -24,26 +24,30 @@
       <file leaf-file-name="search.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8041775">
-              <caret line="140" column="52" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.06527415">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#650#772#1" expanded="false" />
-                <element signature="e#889#2140#0" expanded="false" />
-                <element signature="e#889#1118#1" expanded="false" />
-                <element signature="e#1157#1259#0" expanded="false" />
-                <element signature="e#1157#1228#1" expanded="false" />
-                <element signature="e#1303#1449#0" expanded="false" />
-                <element signature="e#1303#1418#1" expanded="false" />
-                <element signature="e#1495#1864#0" expanded="false" />
-                <element signature="e#1495#1833#1" expanded="false" />
-                <element signature="e#1915#2140#0" expanded="false" />
-                <element signature="e#1915#2109#1" expanded="false" />
-                <element signature="e#2176#2456#0" expanded="false" />
-                <element signature="e#2176#2338#1" expanded="false" />
-                <element signature="e#2494#3562#0" expanded="false" />
-                <element signature="e#2494#3036#1" expanded="false" />
-                <element signature="e#3602#4187#0" expanded="false" />
-                <element signature="e#5088#5220#0" expanded="false" />
+                <element signature="e#901#2152#0" expanded="false" />
+                <element signature="e#901#1130#1" expanded="false" />
+                <element signature="e#1169#1271#0" expanded="false" />
+                <element signature="e#1169#1240#1" expanded="false" />
+                <element signature="e#1315#1461#0" expanded="false" />
+                <element signature="e#1315#1430#1" expanded="false" />
+                <element signature="e#1507#1876#0" expanded="false" />
+                <element signature="e#1507#1845#1" expanded="false" />
+                <element signature="e#1927#2152#0" expanded="false" />
+                <element signature="e#1927#2121#1" expanded="false" />
+                <element signature="e#2188#2468#0" expanded="false" />
+                <element signature="e#2188#2350#1" expanded="false" />
+                <element signature="e#2506#3574#0" expanded="false" />
+                <element signature="e#2506#3048#1" expanded="false" />
+                <element signature="e#3614#4199#0" expanded="false" />
+                <element signature="e#4238#4854#0" expanded="false" />
+                <element signature="e#4897#4971#0" expanded="false" />
+                <element signature="e#5018#5192#0" expanded="false" />
+                <element signature="e#5018#5179#1" expanded="false" />
+                <element signature="e#5250#5382#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -217,7 +221,7 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.DFS">
+  <component name="RunManager" selected="Python.pacman">
     <configuration default="false" name="Doctests in eightpuzzle" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -359,24 +363,7 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="eiqhtpuzzle" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="PacmanAI" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eightpuzzle.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DFS" type="PythonConfigurationType" factoryName="Python">
+    <configuration default="false" name="pacman" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -389,14 +376,13 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PacmanAI" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pacman.py" />
-      <option name="PARAMETERS" value="-l bigMaze   -p SearchAgent -a fn=ucs" />
+      <option name="PARAMETERS" value="-l bigMaze -p SearchAgent -a fn=bfs -z .5" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Python.eiqhtpuzzle" />
-      <item index="1" class="java.lang.String" itemvalue="Python.DFS" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in eightpuzzle" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.pacman" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in eightpuzzle" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -664,26 +650,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8041775">
-          <caret line="140" column="52" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.06527415">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#650#772#1" expanded="false" />
-            <element signature="e#889#2140#0" expanded="false" />
-            <element signature="e#889#1118#1" expanded="false" />
-            <element signature="e#1157#1259#0" expanded="false" />
-            <element signature="e#1157#1228#1" expanded="false" />
-            <element signature="e#1303#1449#0" expanded="false" />
-            <element signature="e#1303#1418#1" expanded="false" />
-            <element signature="e#1495#1864#0" expanded="false" />
-            <element signature="e#1495#1833#1" expanded="false" />
-            <element signature="e#1915#2140#0" expanded="false" />
-            <element signature="e#1915#2109#1" expanded="false" />
-            <element signature="e#2176#2456#0" expanded="false" />
-            <element signature="e#2176#2338#1" expanded="false" />
-            <element signature="e#2494#3562#0" expanded="false" />
-            <element signature="e#2494#3036#1" expanded="false" />
-            <element signature="e#3602#4187#0" expanded="false" />
-            <element signature="e#5088#5220#0" expanded="false" />
+            <element signature="e#901#2152#0" expanded="false" />
+            <element signature="e#901#1130#1" expanded="false" />
+            <element signature="e#1169#1271#0" expanded="false" />
+            <element signature="e#1169#1240#1" expanded="false" />
+            <element signature="e#1315#1461#0" expanded="false" />
+            <element signature="e#1315#1430#1" expanded="false" />
+            <element signature="e#1507#1876#0" expanded="false" />
+            <element signature="e#1507#1845#1" expanded="false" />
+            <element signature="e#1927#2152#0" expanded="false" />
+            <element signature="e#1927#2121#1" expanded="false" />
+            <element signature="e#2188#2468#0" expanded="false" />
+            <element signature="e#2188#2350#1" expanded="false" />
+            <element signature="e#2506#3574#0" expanded="false" />
+            <element signature="e#2506#3048#1" expanded="false" />
+            <element signature="e#3614#4199#0" expanded="false" />
+            <element signature="e#4238#4854#0" expanded="false" />
+            <element signature="e#4897#4971#0" expanded="false" />
+            <element signature="e#5018#5192#0" expanded="false" />
+            <element signature="e#5018#5179#1" expanded="false" />
+            <element signature="e#5250#5382#0" expanded="false" />
           </folding>
         </state>
       </provider>

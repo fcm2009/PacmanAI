@@ -19,7 +19,7 @@ Pacman agents (in searchAgents.py).
 
 from util import Stack
 from util import Queue
-from util import PriorityQueue
+from util import PriorityQueueWithFunction
 import util
 
 class SearchProblem:
@@ -127,7 +127,7 @@ def breadthFirstSearch(problem):
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    stateQueue = PriorityQueue()
+    stateQueue = PriorityQueueWithFunction(calculateCumulitveCost)
 
     state = problem.getStartState()
     state = [(state, "Stop", 0)]
@@ -138,8 +138,15 @@ def uniformCostSearch(problem):
         successors = problem.getSuccessors(state[len(state) - 1][0])
         for successor in successors:
             if successor[0] not in [position[0] for position in state]:
-                stateQueue.push(state + [successor],)
+                stateQueue.push(state + [successor])
     return [direction[1] for direction in state]
+
+
+def calculateCumulitveCost(states):
+    cost = 0
+    for state in states:
+        cost += state[2]
+    return cost
 
 
 def nullHeuristic(state, problem=None):
