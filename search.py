@@ -19,7 +19,7 @@ Pacman agents (in searchAgents.py).
 
 from util import Stack
 from util import Queue
-from util import PriorityQueueWithFunction
+from util import PriorityQueue
 import util
 
 class SearchProblem:
@@ -127,26 +127,20 @@ def breadthFirstSearch(problem):
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    stateQueue = PriorityQueueWithFunction(calculateCumulitveCost)
+    stateQueue = PriorityQueue()
 
     state = problem.getStartState()
     state = [(state, "Stop", 0)]
-    stateQueue.push(state)
+    stateQueue.push(state, 0)
 
     while not problem.isGoalState(state[len(state) - 1][0]):
         state = stateQueue.pop()
         successors = problem.getSuccessors(state[len(state) - 1][0])
         for successor in successors:
             if successor[0] not in [position[0] for position in state]:
-                stateQueue.push(state + [successor])
+                tmp = state + [successor]
+                stateQueue.push(tmp, problem.getCostOfActions([action[1] for action in tmp]))
     return [direction[1] for direction in state]
-
-
-def calculateCumulitveCost(states):
-    cost = 0
-    for state in states:
-        cost += state[2]
-    return cost
 
 
 def nullHeuristic(state, problem=None):
@@ -160,7 +154,20 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    stateQueue = PriorityQueue()
+
+    state = problem.getStartState()
+    state = [(state, "Stop", 0)]
+    stateQueue.push(state, 0)
+
+    while not problem.isGoalState(state[len(state) - 1][0]):
+        state = stateQueue.pop()
+        successors = problem.getSuccessors(state[len(state) - 1][0])
+        for successor in successors:
+            if successor[0] not in [position[0] for position in state]:
+                tmp = state + [successor]
+                stateQueue.push(tmp, problem.getCostOfActions([action[1] for action in tmp]) + heuristic(successor[0], problem))
+    return [direction[1] for direction in state]
 
 
 # Abbreviations
