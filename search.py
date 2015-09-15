@@ -125,8 +125,8 @@ def breadthFirstSearch(problem):
             successorAction = successor[1]
             successorCost = successor[2]
             if successorState not in visited:
-                stateQueue.push((successorState, state[1] + successorAction, successorCost))
-        visited.append(state[0])
+                stateQueue.push((successorState, state[1] + [successorAction], successorCost))
+		visited.append(state[0])
     return state[1]
 
 
