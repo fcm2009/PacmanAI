@@ -112,16 +112,22 @@ def breadthFirstSearch(problem):
     stateQueue = Queue()
 
     state = problem.getStartState()
-    state = [(state, "Stop", 0)]
+    state = (state, [], 1)
     stateQueue.push(state)
 
-    while not problem.isGoalState(state[len(state) - 1][0]):
+    visited = []
+
+    while not problem.isGoalState(state[0]):
         state = stateQueue.pop()
-        successors = problem.getSuccessors(state[len(state) - 1][0])
+        successors = problem.getSuccessors(state)
         for successor in successors:
-            if successor[0] not in [position[0] for position in state]:
-                stateQueue.push(state + [successor])
-    return [direction[1] for direction in state]
+            successorState = successor[0]
+            successorAction = successor[1]
+            successorCost = successor[2]
+            if successorState not in visited:
+                stateQueue.push((successorState, state[1] + successorAction, successorCost))
+        visited.append(state[0])
+    return state[1]
 
 
 def uniformCostSearch(problem):
